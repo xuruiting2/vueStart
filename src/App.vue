@@ -8,7 +8,7 @@
         <li v-for='(item, index) in doList' :key="item" @click='dele(item, index)'>
           <input type="checkbox" v-model="item.checked">
           {{item.text}}
-          <span>{{item.date}}</span>
+          <span class="time">{{item.date}}</span>
           </li>
       </ul>
       <h3>已完成</h3>
@@ -16,7 +16,7 @@
         <li v-for='item in finList' :key="item" >
           <input type="checkbox" disabled>
           <span :class="{active:item.checked}">{{item.text}}</span>
-          <span>{{item.mydate | times}}</span>
+          <span class="time">{{item.mydate | times}}</span>
           </li>
       </ul>
     </div>
@@ -88,7 +88,7 @@ export default {
   padding: 0;
 }
 .search {
-  width: 50%;
+  width: 70%;
   height: 30px;
   border-radius: 5px;
   margin: 10px 0px;
@@ -98,6 +98,7 @@ export default {
 }
 ul {
   list-style: none;
+  width: 70%
 }
 li {
   font-size: 18px;
@@ -106,5 +107,10 @@ li {
 .active {
   color: gray;
   text-decoration: line-through;
+}
+.time {
+  color: gray;
+  font-size: 16px;
+  float: right;
 }
 </style>
